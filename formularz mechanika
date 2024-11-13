@@ -1,1 +1,54 @@
+<!DOCTYPE html>
+<html lang="pl">
 
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularz Mechanika</title>
+
+</head>
+
+<body>
+
+    <h2>Formularz Mechanika</h2>
+    
+    <form>
+
+        <label for="name">1. Podaj swoje imię:</label><br>
+        <input type="text" id="name" name="name"><br><br>
+        
+        <label for="surname">2. Podaj swoje nazwisko:</label><br>
+        <input type="text" id="surname" name="surname"><br><br>
+        
+        <label for="email">3. Podaj swój e-mail:</label><br>
+        <input type="email" id="email" name="email"><br><br>
+
+        <label for="phone">4. Podaj swój numer telefonu:</label><br>
+        <input type="tel" id="phone" name="phone"><br><br>
+        
+        <label>5. jaką szkołe ukończyłeś:</label><br>
+        <input type="checkbox" id="podstawowa" name="qualification" value="podstawowa">
+        <label for="podstawowa">Podstawowa</label><br>
+        <input type="checkbox" id="srednia" name="qualification" value="srednia">
+        <label for="srednia">Średnia</label><br>
+        <input type="checkbox" id="wyzsze" name="qualification" value="wyzsze">
+        <label for="wyzsze">Wyższe</label><br><br>
+        
+        <label for="declaration">6. ile masz lat doświadczenia:</label><br>
+        <input type="text" id="declaration" name="declaration"><br><br>
+        
+        <label for="phone">7. Podaj swój numer telefonu:</label><br>
+        <input type="tel" id="phone" name="phone"><br><br>
+        
+        <label for="why">8. Dlaczego Ty?</label><br>
+        <textarea id="why" name="why" rows="4" cols="50"></textarea><br><br>
+        
+        <button type="submit">Zakończ</button>
+        <button type="reset">Reset</button>
+
+    </form>
+
+</body>
+
+</html>
