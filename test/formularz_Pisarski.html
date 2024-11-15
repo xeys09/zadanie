@@ -1,19 +1,210 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="author" content="Cyprian Pisarski">
-    <meta name="description" content="Formularz hurtowni telefonów komórkowych">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formularz - Pisarski</title>
+    <title>Formularz Mechanika</title>
+    <style>
+        /* Stylizacja całego ciała strony */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Stylizacja kontenera formularza */
+        .form-container {
+            width: 100%;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        /* Wyśrodkowanie napisu formularza */
+        h2 {
+            text-align: center;
+        }
+
+        /* Stylizacja tabeli */
+        table {
+            width: 100%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 8px;
+            vertical-align: top;
+        }
+
+        .form-label {
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .menu-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Stylizacja kontenera przycisków */
+        .button-container {
+            display: flex;
+            flex-direction: column; /* Ustawienie przycisków jeden pod drugim */
+            justify-content: center; /* Wyśrodkowanie przycisków w pionie */
+            align-items: flex-end; /* Wyrównanie do prawej strony */
+            height: 150px; /* Wysokość kontenera dla centrowania */
+            margin-left: auto; /* Wyrównanie do prawej strony */
+        }
+
+        .button-container button {
+            margin-bottom: 20px; /* Odstęp między przyciskami */
+        }
+
+        /* Wyrównanie elementów po lewej stronie */
+        .table-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .section-left {
+            width: 48%;
+        }
+
+        .section-right {
+            width: 48%;
+        }
+
+        .section-left td,
+        .section-right td {
+            padding: 5px 10px;
+        }
+
+        .section-right input,
+        .section-right textarea {
+            width: 100%;
+        }
+
+        /* Flexbox, aby wszystkie checkboxy były wyrównane do jednej linii */
+        .checkbox-group {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .checkbox-container label {
+            flex-grow: 1;
+            margin-right: 10px;
+        }
+
+        .checkbox-container input {
+            margin-left: 10px;
+        }
+    </style>
 </head>
-<body style="background-color: lightyellow; text-align: center; font-family: Arial, sans-serif;">
 
-    <h1>Tutaj będzie formularz</h1>
+<body>
 
-    <div>
-        <a href="menu_Pisarski.html" style="text-decoration: none; color: black; font-weight: bold;">Powrót do menu</a>
+    <div class="form-container">
+        <h2>Formularz Mechanika</h2>
+
+        <form>
+            <table class="table-container">
+                <tr>
+                    <!-- Tabela 1: Podpunkty 1-4 po lewej stronie -->
+                    <td class="section-left">
+                        <table>
+                            <tr>
+                                <td class="form-label" colspan="2"><label for="name">1. Podaj swoje imię:</label></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><input type="text" id="name" name="name"></td>
+                            </tr>
+                            <tr>
+                                <td class="form-label" colspan="2"><label for="surname">2. Podaj swoje nazwisko:</label></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><input type="text" id="surname" name="surname"></td>
+                            </tr>
+                            <tr>
+                                <td class="form-label" colspan="2"><label for="email">3. Podaj swój e-mail:</label></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><input type="email" id="email" name="email"></td>
+                            </tr>
+                            <tr>
+                                <td class="form-label" colspan="2"><label for="phone">4. Podaj swój numer telefonu:</label></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><input type="tel" id="phone" name="phone"></td>
+                            </tr>
+                        </table>
+                    </td>
+
+                    <!-- Tabela 2: Podpunkty 5-7 po prawej stronie -->
+                    <td class="section-right">
+                        <table>
+                            <tr>
+                                <td class="form-label" colspan="2">5. Jaką szkołę ukończyłeś:</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <div class="checkbox-group">
+                                        <div class="checkbox-container">
+                                            <label for="podstawowa">Podstawowa</label>
+                                            <input type="checkbox" id="podstawowa" name="qualification[]" value="podstawowa">
+                                        </div>
+                                        <div class="checkbox-container">
+                                            <label for="srednia">Średnia</label>
+                                            <input type="checkbox" id="srednia" name="qualification[]" value="srednia">
+                                        </div>
+                                        <div class="checkbox-container">
+                                            <label for="wyzsze">Wyższe</label>
+                                            <input type="checkbox" id="wyzsze" name="qualification[]" value="wyzsze">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="form-label" colspan="2"><label for="experience">6. Ile masz lat doświadczenia:</label></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><input type="text" id="experience" name="experience"></td>
+                            </tr>
+                            <tr>
+                                <td class="form-label" colspan="2"><label for="why">7. Dlaczego Ty?</label></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><textarea id="why" name="why" rows="4"></textarea></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- Przycisk Reset i Zakończ w kolumnie po prawej stronie -->
+            <div class="button-container">
+                <button type="reset">Reset</button>
+                <button type="submit">Zakończ</button>
+            </div>
+
+        </form>
+
+        <!-- Link do menu, wyśrodkowany -->
+        <div class="menu-link">
+            <a href="menu_Pisarski.html" style="text-decoration: none; color: black; font-weight: bold;">Powrót do menu</a>
+        </div>
     </div>
 
 </body>
+
 </html>
